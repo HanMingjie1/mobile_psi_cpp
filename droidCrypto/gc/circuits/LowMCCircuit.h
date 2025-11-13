@@ -2,7 +2,7 @@
 
 #include <droidCrypto/gc/circuits/Circuit.h>
 #include <droidCrypto/utils/graycode.h>
-#include <jni.h>
+// #include <jni.h>  // Commented out to avoid JNI dependency
 
 extern "C" {
 #include <droidCrypto/lowmc/lowmc.h>

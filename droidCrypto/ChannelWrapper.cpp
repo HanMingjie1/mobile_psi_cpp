@@ -16,55 +16,26 @@ namespace droidCrypto {
 
 JavaChannelWrapper::JavaChannelWrapper(JNIEnv *env, jobject channel)
     : ChannelWrapper() {
-  mEnv = env;
-  mChannel = channel;
-  jclass clazz = mEnv->GetObjectClass(channel);
-  assert(clazz != nullptr);
-
-  mSendAsyncID = mEnv->GetMethodID(clazz, "sendAsync",
-                                   "([B)Ljava/util/concurrent/Future;");
-  assert(mSendAsyncID != nullptr);
-
-  mSendAsyncVoidID = mEnv->GetMethodID(clazz, "sendAsyncVoid", "([B)V");
-  assert(mSendAsyncID != nullptr);
-
-  mSendID = mEnv->GetMethodID(clazz, "send", "(Ljava/nio/ByteBuffer;)V");
-  assert(mSendID != nullptr);
-
-  mRecvAsyncID =
-      mEnv->GetMethodID(clazz, "recvAsync",
-                        "(Ljava/nio/ByteBuffer;)Ljava/util/concurrent/Future;");
-  assert(mRecvAsyncID != nullptr);
-
-  mRecvID = mEnv->GetMethodID(clazz, "recv", "(Ljava/nio/ByteBuffer;)V");
-  assert(mRecvID != nullptr);
+  // JNI stub disabled for non-Android builds
+  (void)env;
+  (void)channel;
+  assert(false && "JavaChannelWrapper should not be used in non-JNI builds");
 }
 
 void JavaChannelWrapper::sendAsync(std::vector<block> &data) {
-  size_t bytes = data.size() * sizeof(block);
-  void *buf = (void *)data.data();
-  jbyteArray dataBuffer = mEnv->NewByteArray(bytes);
-  mEnv->SetByteArrayRegion(dataBuffer, 0, bytes, (jbyte *)buf);
-  //        mEnv->CallObjectMethod(mChannel, mSendAsyncID, dataBuffer);
-  mEnv->CallVoidMethod(mChannel, mSendAsyncVoidID, dataBuffer);
+  assert(false);
 }
 
 void JavaChannelWrapper::send(uint8_t *data, size_t length) {
-  jobject dataBuffer = mEnv->NewDirectByteBuffer(data, length);
-  mEnv->CallVoidMethod(mChannel, mSendID, dataBuffer);
+  assert(false);
 }
 
 void JavaChannelWrapper::send(const block &data) {
-  jobject dataBuffer =
-      mEnv->NewDirectByteBuffer(const_cast<block *>(&data), sizeof(block));
-  mEnv->CallVoidMethod(mChannel, mSendID, dataBuffer);
+  assert(false);
 }
 
 void JavaChannelWrapper::send(const std::vector<block> &data) {
-  size_t bytes = data.size() * sizeof(block);
-  void *buf = (void *)data.data();
-  jobject dataBuffer = mEnv->NewDirectByteBuffer(buf, bytes);
-  mEnv->CallVoidMethod(mChannel, mSendID, dataBuffer);
+  assert(false);
 }
 
 void JavaChannelWrapper::recvAsync(uint8_t *data, size_t length) {
@@ -73,20 +44,15 @@ void JavaChannelWrapper::recvAsync(uint8_t *data, size_t length) {
 }
 
 void JavaChannelWrapper::recv(uint8_t *data, size_t length) {
-  jobject dataBuffer = mEnv->NewDirectByteBuffer(data, length);
-  mEnv->CallVoidMethod(mChannel, mRecvID, dataBuffer);
+  assert(false);
 }
 
 void JavaChannelWrapper::recv(block &data) {
-  jobject dataBuffer = mEnv->NewDirectByteBuffer(&data, sizeof(block));
-  mEnv->CallVoidMethod(mChannel, mRecvID, dataBuffer);
+  assert(false);
 }
 
 void JavaChannelWrapper::recv(std::vector<block> &data) {
-  size_t bytes = data.size() * sizeof(block);
-  void *buf = (void *)data.data();
-  jobject dataBuffer = mEnv->NewDirectByteBuffer(buf, bytes);
-  mEnv->CallVoidMethod(mChannel, mRecvID, dataBuffer);
+  assert(false);
 }
 
 CSocketChannel::CSocketChannel(const char *hostname, uint16_t port,

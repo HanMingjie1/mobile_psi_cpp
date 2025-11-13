@@ -2,7 +2,8 @@
 
 #include <cstdint>
 
-#include <jni.h>
+// #include <jni.h>  // Commented out to avoid JNI dependency
+#include <droidCrypto/jni_compat.h>  // JNI compatibility definitions
 
 #include <droidCrypto/Defines.h>
 

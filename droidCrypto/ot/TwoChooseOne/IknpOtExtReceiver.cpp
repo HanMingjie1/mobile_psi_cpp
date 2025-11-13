@@ -224,8 +224,9 @@ void IknpOtExtReceiver::receive(const BitVector &choices, span<block> messages,
 
 }  // namespace droidCrypto
 
+/*
 jlong Java_com_example_mobile_1psi_droidCrypto_OT_IknpOTExtReceiver_init(
-    JNIEnv *env, jobject /* this */, jobject baseOTs) {
+    JNIEnv *env, jobject thisObj, jobject baseOTs) {
   droidCrypto::IknpOtExtReceiver *receiver =
       new droidCrypto::IknpOtExtReceiver();
   void *inputPtr = env->GetDirectBufferAddress(baseOTs);
@@ -236,7 +237,9 @@ jlong Java_com_example_mobile_1psi_droidCrypto_OT_IknpOTExtReceiver_init(
   receiver->setBaseOts(baseOTspan);
   return (jlong)receiver;
 }
+*/
 
+/*
 void Java_com_example_mobile_1psi_droidCrypto_OT_IknpOTExtReceiver_recv(
     JNIEnv *env, jobject this_obj, jlong object, jobject messages,
     jbyteArray choices, jobject channel) {
@@ -262,6 +265,7 @@ void Java_com_example_mobile_1psi_droidCrypto_OT_IknpOTExtReceiver_recv(
       (droidCrypto::block *)msgPtr, msgLength / sizeof(droidCrypto::block));
   receiver->receive(choizes, mes, p, chan);
 }
+*/
 
 void Java_com_example_mobile_1psi_droidCrypto_OT_IknpOTExtReceiver_deleteNativeObj(
     JNIEnv *env, jobject /* this */, jlong object) {

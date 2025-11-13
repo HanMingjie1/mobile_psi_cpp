@@ -112,7 +112,7 @@ if ("${ANDROID}")
   endif ()
 else ()
   # normal x86 build
-  find_package(JNI)
+  # find_package(JNI)  # Commented out to avoid Java dependency
   set(CMAKE_C_FLAGS "-ffunction-sections -Wall  -maes -msse2 -msse4.1 -mpclmul -Wfatal-errors -fPIC -Wno-ignored-attributes")
   set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++14")
 
@@ -143,9 +143,9 @@ if ("${ANDROID}")
   add_library(pthread Defines.h)
   set_property(TARGET pthread PROPERTY LINKER_LANGUAGE CXX)
 else ()
-  target_include_directories(droidcrypto PUBLIC ${JNI_INCLUDE_DIRS})
+  # target_include_directories(droidcrypto PUBLIC ${JNI_INCLUDE_DIRS})  # Commented out
   target_include_directories(droidcrypto PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/lowmc")
-  target_link_libraries(droidcrypto ${JNI_LIBARIRES})
+  # target_link_libraries(droidcrypto ${JNI_LIBARIRES})  # Commented out
 endif ()
 target_link_libraries(droidcrypto lowmc cuckoo keccak)
 

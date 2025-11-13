@@ -901,9 +901,10 @@ void AES::encryptCTR(uint64_t baseIdx, uint64_t blockLength,
 
 }  // namespace droidCrypto
 
+/*
 JNIEXPORT void JNICALL
 Java_com_example_mobile_1psi_droidCrypto_Crypto_AES_fixedKeyEnc(JNIEnv *env,
-                                                           jclass /*this*/,
+                                                           jclass this,
                                                            jobject pt,
                                                            jobject ct) {
   droidCrypto::block *plaintexts =
@@ -915,3 +916,4 @@ Java_com_example_mobile_1psi_droidCrypto_Crypto_AES_fixedKeyEnc(JNIEnv *env,
   assert(len == len2);
   droidCrypto::mAesFixedKey.encryptECBBlocks(plaintexts, len / 16, ciphertexts);
 }
+*/

@@ -184,8 +184,9 @@ void IknpDotExtSender::send(span<std::array<block, 2>> messages, PRNG &prng,
  * Method:    init
  * Signature: (Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)J
  */
+/*
 jlong Java_com_example_mobile_1psi_droidCrypto_OT_IknpDOTExtSender_init(
-    JNIEnv *env, jobject /* this */, jobject baseOTs, jbyteArray choices) {
+    JNIEnv *env, jobject thisObj, jobject baseOTs, jbyteArray choices) {
   droidCrypto::IknpDotExtSender *sender = new droidCrypto::IknpDotExtSender();
   void *inputPtr = env->GetDirectBufferAddress(baseOTs);
   jlong inputLength = env->GetDirectBufferCapacity(baseOTs);
@@ -201,6 +202,7 @@ jlong Java_com_example_mobile_1psi_droidCrypto_OT_IknpDOTExtSender_init(
   sender->setBaseOts(baseOTspan, choizes);
   return (jlong)sender;
 }
+*/
 
 /*
  * Class:     com_example_mobile_1psi_droidCrypto_OT_IknpOTExtSender
@@ -208,8 +210,9 @@ jlong Java_com_example_mobile_1psi_droidCrypto_OT_IknpDOTExtSender_init(
  * Signature:
  * (JLjava/nio/ByteBuffer;Lcom/example/mobile_1psi/droidCrypto/Networking/Channel;)V
  */
+/*
 void Java_com_example_mobile_1psi_droidCrypto_OT_IknpDOTExtSender_send(
-    JNIEnv *env, jobject /*this*/, jlong object, jobject messages,
+    JNIEnv *env, jobject thisObj, jlong object, jobject messages,
     jobject channel) {
   droidCrypto::IknpDotExtSender *sender =
       (droidCrypto::IknpDotExtSender *)object;
@@ -227,6 +230,7 @@ void Java_com_example_mobile_1psi_droidCrypto_OT_IknpDOTExtSender_send(
 
   sender->send(mes, p, chan);
 }
+*/
 /*
  * Class:     com_example_mobile_1psi_droidCrypto_OT_IknpOTExtSender
  * Method:    deleteNativeObj

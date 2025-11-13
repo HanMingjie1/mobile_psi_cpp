@@ -4,7 +4,7 @@
 #include <droidCrypto/BitVector.h>
 #include <droidCrypto/PRNG.h>
 
-#include <jni.h>
+// #include <jni.h>  // Commented out to avoid JNI dependency
 #include <array>
 
 namespace droidCrypto {

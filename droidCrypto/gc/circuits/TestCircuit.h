@@ -1,6 +1,6 @@
 #pragma once
 
-#include <jni.h>
+// #include <jni.h>  // Commented out to avoid JNI dependency
 #include <droidCrypto/gc/circuits/Circuit.h>
 
 namespace droidCrypto {

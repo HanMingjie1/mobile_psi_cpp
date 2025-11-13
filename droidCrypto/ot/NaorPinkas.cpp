@@ -169,9 +169,10 @@ void NaorPinkas::send(span<std::array<block, 2>> messages, PRNG &prng,
 
 }  // namespace droidCrypto
 
+/*
 JNIEXPORT void JNICALL
 Java_com_example_mobile_1psi_droidCrypto_OT_NaorPinkas_recv(JNIEnv *env,
-                                                            jobject /*this*/,
+                                                            jobject this,
                                                             jobject messages,
                                                             jbyteArray choices,
                                                             jobject channel) {
@@ -198,10 +199,12 @@ Java_com_example_mobile_1psi_droidCrypto_OT_NaorPinkas_recv(JNIEnv *env,
   // Log::v("naor-pinkas-r", "mes: %s", test.hex().c_str());
   // Log::v("naor-pinkas-r", "Native Recv done!");
 }
+*/
 
+/*
 JNIEXPORT void JNICALL
 Java_com_example_mobile_1psi_droidCrypto_OT_NaorPinkas_send(JNIEnv *env,
-                                                            jobject /*this*/,
+                                                            jobject this,
                                                             jobject messages,
                                                             jobject channel) {
   droidCrypto::NaorPinkas np;
@@ -220,3 +223,4 @@ Java_com_example_mobile_1psi_droidCrypto_OT_NaorPinkas_send(JNIEnv *env,
   // Log::v("naor-pinkas-s", "mes: %s", test.hex().c_str());
   // Log::v("naor-pinkas-s", "Native Send done!");
 }
+*/

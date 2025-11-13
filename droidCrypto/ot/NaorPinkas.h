@@ -3,7 +3,7 @@
 #include <droidCrypto/BitVector.h>
 #include <droidCrypto/Defines.h>
 #include <droidCrypto/ot/TwoChooseOne/OTExtInterface.h>
-#include <jni.h>
+// #include <jni.h>  // Commented out to avoid JNI dependency
 
 namespace droidCrypto {
 class ChannelWrapper;

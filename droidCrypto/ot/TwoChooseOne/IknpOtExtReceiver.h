@@ -4,7 +4,7 @@
 #include <droidCrypto/PRNG.h>
 #include <droidCrypto/ot/TwoChooseOne/OTExtInterface.h>
 
-#include <jni.h>
+// #include <jni.h>  // Commented out to avoid JNI dependency
 #include <array>
 
 namespace droidCrypto {
